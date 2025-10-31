@@ -491,37 +491,37 @@
             <p class="social-subtitle">Stay connected with our church community through social media</p>
 
             <div class="social-grid">
-                <div class="social-card" onclick="openSocial('facebook')">
+                <div class="social-card" onclick="openSocial(event, 'facebook')">
                     <div class="social-icon facebook">📘</div>
                     <div class="social-name">Facebook</div>
                     <div class="social-handle">@AICKahawaWest</div>
                 </div>
 
-                <div class="social-card" onclick="openSocial('youtube')">
+                <div class="social-card" onclick="openSocial(event, 'youtube')">
                     <div class="social-icon youtube">📺</div>
                     <div class="social-name">YouTube</div>
                     <div class="social-handle">AIC Kahawa West Church</div>
                 </div>
 
-                <div class="social-card" onclick="openSocial('instagram')">
+                <div class="social-card" onclick="openSocial(event, 'instagram')">
                     <div class="social-icon instagram">📷</div>
                     <div class="social-name">Instagram</div>
                     <div class="social-handle">@aickahawawest</div>
                 </div>
 
-                <div class="social-card" onclick="openSocial('twitter')">
+                <div class="social-card" onclick="openSocial(event, 'twitter')">
                     <div class="social-icon twitter">🐦</div>
                     <div class="social-name">Twitter/X</div>
                     <div class="social-handle">@AICKahawaWest</div>
                 </div>
 
-                <div class="social-card" onclick="openSocial('whatsapp')">
+                <div class="social-card" onclick="openSocial(event, 'whatsapp')">
                     <div class="social-icon whatsapp">💬</div>
                     <div class="social-name">WhatsApp</div>
                     <div class="social-handle">0794 263 016</div>
                 </div>
 
-                <div class="social-card" onclick="openSocial('email')">
+                <div class="social-card" onclick="openSocial(event, 'email')">
                     <div class="social-icon email">📧</div>
                     <div class="social-name">Email</div>
                     <div class="social-handle">info@aickahawawest.org</div>
@@ -718,7 +718,7 @@
             renderGallery();
         });
 
-        function openSocial(platform) {
+        function openSocial(event, platform) {
             // Add interactive feedback
             const card = event.currentTarget;
             card.style.transform = 'scale(0.95)';
@@ -736,12 +736,7 @@
                 email: 'mailto:info@aickahawawest.org'
             };
 
-            // Open Instagram and WhatsApp directly, show message for placeholder links
-            if (platform === 'instagram' || platform === 'whatsapp') {
-                window.open(urls[platform], '_blank');
-            } else {
-                alert(`This would open: ${urls[platform]}\n\nPlease replace with actual social media handles and links.`);
-            }
+            window.open(urls[platform], '_blank');
         }
 
         // Add some interactive sparkle effects
